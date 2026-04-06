@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Posto de Gasolina</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!--Cabeçalho-->
+    <header class="header">
+        <div class="container">
+            <nav class="navgas">
+                <a href="#inicio">Início</a>
+                <a href="#buscarposto">Buscar Posto</a>
+                <a href="#mapa">Mapa</a>
+                <a href="#sobreoprojeto">Sobre o Projeto</a>
+            </nav>
+        </div>
+    </header>
+    <!--Corpo-->
+    <main>
+        <!--Inicio do site(Pagina principal)-->
+        <section id="inicio">
+            <div class="inicio-conteudo">
+                <h1>Compare preços de combustíveis e <span>economize</span> no abastecimento</h1>
+                <p>Encontre os melhores preços de gasolina, etanol e diesel nos postos da sua região. Economize dinheiro em cada abastecimento.</p>
+                <div class="inicio-botoes">
+                    <a href="#buscarposto">Buscar Posto</a>
+                    <a href="#vantagens">Vantagens</a>
+                </div>
+            </div>
+            <img src="./assets/carro_gasolina.png" alt="carro gasolina">
+        </section>
+        <!--Sobre o site-->
+        <section id="vantagens">
+            <h2>Por que usar o <span>FuelSpotBR</span>?</h2>
+            <p>Nossa plataforma oferece as ferramentas necessária para você economizar em cada abastecimento</p>
+
+            <div>
+                <article>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M4 16L9 11L13 15L20 8" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 8H15.5" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M20 8V12.5" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+
+                    <h3>Encontre os melhores preços</h3>
+                    <p>Compare rapidamente os valores de gasolina, etanol e diesel em diferentes postos para escolher a opção mais econômica.</p>
+                </article>
+                <article>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="8" stroke="#dc2626" stroke-width="2"/>
+                        <path d="M12 8V16" stroke="#dc2626" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M14.5 9.5C14.5 8.7 13.4 8 12 8C10.6 8 9.5 8.7 9.5 9.8C9.5 12 14.5 11 14.5 13.8C14.5 15 13.4 16 12 16C10.6 16 9.5 15.3 9.5 14.5" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+
+                    <h3>Economize no abastecimento</h3>
+                    <p>Ao visualizar os preços disponíveis na sua região, você pode decidir onde abastecer pagando menos.</p>
+                </article>
+                <article>
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="#dc2626" stroke-width="2"/>
+                        <circle cx="12" cy="11" r="2" stroke="#dc2626" stroke-width="2"/>
+                    </svg>
+
+                    <h3>Localize postos próximos</h3>
+                    <p>Consulte postos próximos de forma prática em um único lugar.</p>
+                </article>
+                <article>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M8 6H20" stroke="#dc2626" stroke-width="2.1" stroke-linecap="round"/>
+                        <path d="M8 12H20" stroke="#dc2626" stroke-width="2.1" stroke-linecap="round"/>
+                        <path d="M8 18H20" stroke="#dc2626" stroke-width="2.1" stroke-linecap="round"/>
+                        <circle cx="4.5" cy="6" r="1.2" fill="#dc2626"/>
+                        <circle cx="4.5" cy="12" r="1.2" fill="#dc2626"/>
+                        <circle cx="4.5" cy="18" r="1.2" fill="#dc2626"/>
+                    </svg>
+
+                    <h3>Informações organizadas</h3>
+                    <p>Todos os dados importantes sobre combustíveis e postos são apresentados de forma clara e fácil de entender.</p>
+                </article>
+            </div>
+        </section>
+        <section class="chamada">
+            <h2>Pronto para começar a economizar?</h2>
+            <p>Busque os melhores preços de combustíveis na sua região agora mesmo</p>
+        </section>
+        <!--Busca dos postos-->
+        <section id="buscarposto">
+            <div class="buscar-conteudo">
+
+                <form class="form-busca">
+
+                    <div class="campo">
+                        <label for="nome">Nome do Posto</label>
+                        <input type="text" id="nome" name="nome" placeholder="Ex: Ipiranga">
+                    </div>
+
+                    <div class="campo">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" placeholder="Ex: Vila Velha">
+                    </div>
+
+                    <div class="campo">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" placeholder="Ex: Itaparica">
+                    </div>
+
+                    <div class="campo">
+                        <label for="combustivel">Tipo de Combustível</label>
+                        <select name="combustivel" id="combustivel">
+                            <option value="">Selecione</option>
+                            <option value="gasolina">Gasolina</option>
+                            <option value="gasolina-aditivada">Gasolina Aditivada</option>
+                            <option value="etanol">Etanol</option>
+                            <option value="diesel">Diesel</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-buscar">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                            <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Buscar Postos
+                    </button>
+
+                </form>
+
+                <!-- FORA do form -->
+                <div class="resultado">
+
+                <!-- Estado vazio -->
+                <div class="estado-vazio">
+                    <div class="icone-vazio">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+                            <line x1="16.65" y1="16.65" x2="21" y2="21" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <h3>Pronto para buscar?</h3>
+                    <p>Preencha os filtros acima e clique em "Buscar Postos" para encontrar os melhores preços</p>
+                </div>
+
+                <!-- RESULTADOS -->
+                <div class="resultados-busca">
+                    <h2>Resultados da Busca</h2>
+                    <p class="texto-resultado">Encontramos 7 postos para sua busca</p>
+
+                    <!-- Posto Boulevard -->
+                    <div class="card-posto">
+                        <div class="topo-posto">
+                            <div class="info-esquerda">
+                                <div class="icone-local">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+
+                                <div class="dados-posto">
+                                    <div class="linha-titulo">
+                                        <h3>Posto Boulevard</h3>
+                                    </div>
+
+                                    <p class="endereco">Rodovia do Sol</p>
+                                    <p class="bairro-cidade">Praia de Itaparica, Vila Velha</p>
+
+                                    <div class="meta-posto">
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 19L19 5L5 12L11 13L12 19Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                            </svg>
+                                            2.1 km
+                                        </span>
+
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Coleta em 25/03/2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preco-lateral">
+                                <small class="tipo-combustivel">Gasolina</small>
+                                <strong class="valor-principal">R$ 6,28 </strong>
+                                <span>por litro</span>
+                            </div>
+                        </div>
+
+                        <div class="precos-combustivel">
+                            <div><small>Gasolina Aditivada</small><strong class="preco-gasolina-aditivada">R$ 6,68</strong></div>
+                            <div><small>Gasolina</small><strong class="preco-gasolina">R$ 6,28</strong></div>
+                            <div><small>Etanol</small><strong class="preco-etanol">R$ 4,58</strong></div>
+                            <div><small>Diesel</small><strong class="preco-diesel">R$ 5,94</strong></div>
+                        </div>
+                    </div>
+                    <!-- Posto R M -->
+                    <div class="card-posto">
+                        <div class="topo-posto">
+                            <div class="info-esquerda">
+                                <div class="icone-local">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+
+                                <div class="dados-posto">
+                                    <div class="linha-titulo">
+                                        <h3>Posto R M</h3>
+                                    </div>
+                                    <p class="endereco">Rodovia do Sol</p>
+                                    <p class="bairro-cidade">Praia de Itaparica, Vila Velha</p>
+                                    
+                                    <div class="meta-posto">
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 19L19 5L5 12L11 13L12 19Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                            </svg>
+                                            2.5 km
+                                        </span>
+
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Coleta em 25/03/2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preco-lateral">
+                                <small class="tipo-combustivel">Gasolina</small>
+                                <strong class="valor-principal">R$ 6,06</strong>
+                                <span>por litro</span>
+                            </div>
+                        </div>
+
+                        <div class="precos-combustivel">
+                            <div><small>Gasolina Aditivada</small><strong class="preco-gasolina-aditivada">R$ 6,68</strong></div>
+                            <div><small>Gasolina</small><strong class="preco-gasolina">R$ 6,06</strong></div>
+                            <div><small>Etanol</small><strong class="preco-etanol">R$ 4,69</strong></div>
+                            <div><small>Diesel</small><strong class="preco-diesel">R$ 5,99</strong></div>
+                        </div>
+                    </div>
+                    <!-- Posto Vila Velha -->
+                    <div class="card-posto">
+                        <div class="topo-posto">
+                            <div class="info-esquerda">
+                                <div class="icone-local">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+
+                                <div class="dados-posto">
+                                    <div class="linha-titulo">
+                                        <h3>Posto Vila Velha</h3>
+                                    </div>
+                                    <p class="endereco">Rodovia Carlos Lindemberg</p>
+                                    <p class="bairro-cidade">Centro, Vila Velha</p>
+                                
+                                    <div class="meta-posto">
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 19L19 5L5 12L11 13L12 19Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                            </svg>
+                                            3.0 km
+                                        </span>
+
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Coleta em 25/03/2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preco-lateral">
+                                <small class="tipo-combustivel">Gasolina</small>
+                                <strong class="valor-principal">R$ 6,09</strong>
+                                <span>por litro</span>
+                            </div>
+                        </div>
+
+                        <div class="precos-combustivel">
+                            <div><small>Gasolina Aditivada</small><strong class="preco-gasolina-aditivada">R$ 5,89</strong></div>
+                            <div><small>Gasolina</small><strong class="preco-gasolina">R$ 6,09</strong></div>
+                            <div><small>Etanol</small><strong class="preco-etanol">R$ 4,20</strong></div>
+                            <div><small>Diesel</small><strong class="preco-diesel">R$ 6,15</strong></div>
+                        </div>
+                    </div>
+                    <!-- Posto Champagnat -->
+                    <div class="card-posto">
+                        <div class="topo-posto">
+                            <div class="info-esquerda">
+                                <div class="icone-local">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+
+                                <div class="dados-posto">
+                                    <div class="linha-titulo">
+                                        <h3>Posto Champagnat</h3>
+                                    </div>
+                                    <p class="endereco">Rua Hugo Musso</p>
+                                    <p class="bairro-cidade">Praia da Costa, Vila Velha</p>
+
+                                    <div class="meta-posto">
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 19L19 5L5 12L11 13L12 19Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                            </svg>
+                                            3.3 km
+                                        </span>
+
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Coleta em 25/03/2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preco-lateral">
+                                <small class="tipo-combustivel">Gasolina</small>
+                                <strong class="valor-principal">R$ 5,95</strong>
+                                <span>por litro</span>
+                            </div>
+                        </div>
+
+                        <div class="precos-combustivel">
+                            <div><small>Gasolina Aditivada</small><strong class="preco-gasolina-aditivada">R$ 5,75</strong></div>
+                            <div><small>Gasolina</small><strong class="preco-gasolina">R$ 5,95</strong></div>
+                            <div><small>Etanol</small><strong class="preco-etanol">R$ 4,05</strong></div>
+                            <div><small>Diesel</small><strong class="preco-diesel">R$ 6,10</strong></div>
+                        </div>
+                    </div>
+                    <!-- Posto Itapua -->
+                    <div class="card-posto">
+                        <div class="topo-posto">
+                            <div class="info-esquerda">
+                                <div class="icone-local">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+
+                                <div class="dados-posto">
+                                    <div class="linha-titulo">
+                                        <h3>Posto Itapua</h3>
+                                    </div>
+                                    <p class="endereco">Avenida Francelina Setubal</p>
+                                    <p class="bairro-cidade">Itapoa, Vila Velha</p>
+
+                                    <div class="meta-posto">
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 19L19 5L5 12L11 13L12 19Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                            </svg>
+                                            2.7 km
+                                        </span>
+
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Coleta em 25/03/2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preco-lateral">
+                                <small class="tipo-combustivel">Gasolina</small>
+                                <strong class="valor-principal">R$ 5,90</strong>
+                                <span>por litro</span>
+                            </div>
+                        </div>
+
+                        <div class="precos-combustivel">
+                            <div><small>Gasolina Aditivada</small><strong class="preco-gasolina-aditivada">R$ 5,70</strong></div>
+                            <div><small>Gasolina</small><strong class="preco-gasolina">R$ 5,90</strong></div>
+                            <div><small>Etanol</small><strong class="preco-etanol">R$ 3,99</strong></div>
+                            <div><small>Diesel</small><strong class="preco-diesel">R$ 6,05</strong></div>
+                        </div>
+                    </div>
+                    <!-- Posto Perim -->
+                    <div class="card-posto">
+                        <div class="topo-posto">
+                            <div class="info-esquerda">
+                                <div class="icone-local">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+
+                                <div class="dados-posto">
+                                    <div class="linha-titulo">
+                                        <h3>Posto Perim</h3>
+                                    </div>
+                                    <p class="endereco">Rua Santa Leopoldina</p>
+                                    <p class="bairro-cidade">Itaparica, Vila Velha</p>
+
+                                    <div class="meta-posto">
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 19L19 5L5 12L11 13L12 19Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                            </svg>
+                                            4.0 km
+                                        </span>
+
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Coleta em 25/03/2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preco-lateral">
+                                <small class="tipo-combustivel">Gasolina</small>
+                                <strong class="valor-principal">R$ 6,05</strong>
+                                <span>por litro</span>
+                            </div>
+                        </div>
+
+                        <div class="precos-combustivel">
+                            <div><small>Gasolina Aditivada</small><strong class="preco-gasolina-aditivada">R$ 5,85</strong></div>
+                            <div><small>Gasolina</small><strong class="preco-gasolina">R$ 6,05</strong></div>
+                            <div><small>Etanol</small><strong class="preco-etanol">R$ 4,15</strong></div>
+                            <div><small>Diesel</small><strong class="preco-diesel">R$ 6,15</strong></div>
+                        </div>
+                    </div>
+                    <!-- Posto Saturnino -->
+                    <div class="card-posto">
+                        <div class="topo-posto">
+                            <div class="info-esquerda">
+                                <div class="icone-local">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+
+                                <div class="dados-posto">
+                                    <div class="linha-titulo">
+                                        <h3>Posto Saturnino Rangel Mauro</h3>
+                                    </div>
+                                    <p class="endereco">Rua Professor Augusto Rusch</p>
+                                    <p class="bairro-cidade">Praia de Itaparica, Vila Velha</p>
+                                    
+                                    <div class="meta-posto">
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 19L19 5L5 12L11 13L12 19Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                            </svg>
+                                            4.6 km
+                                        </span>
+
+                                        <span>
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Coleta em 25/03/2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preco-lateral">
+                                <small class="tipo-combustivel">Gasolina</small>
+                                <strong class="valor-principal">R$ 6,09</strong>
+                                <span>por litro</span>
+                            </div>
+                        </div>
+
+                        <div class="precos-combustivel">
+                            <div><small>Gasolina Aditivada</small><strong class="preco-gasolina-aditivada">R$ 6,59</strong></div>
+                            <div><small>Gasolina</small><strong class="preco-gasolina">R$ 6,09</strong></div>
+                            <div><small>Etanol</small><strong class="preco-etanol">R$ 4,21</strong></div>
+                            <div><small>Diesel</small><strong class="preco-diesel">R$ 6,15</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Mapa-->
+        <section id="mapa">
+            <h2>Mapa de Postos</h2>
+            <p>Visualize os postos de combustíveis próximos à sua localização</p>
+
+            <div>
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z" stroke="#dc2626" stroke-width="1.5"/>
+                        <circle cx="12" cy="11" r="2" stroke="#dc2626" stroke-width="1.5"/>
+                    </svg>
+                <h3>Mapa Interativo</h3>
+                <p>Funcionalidade de mapa em desenvolvimento</p>
+            </div>
+
+        </section>
+        <!--Sobre o Projeto-->
+        <section id="sobreoprojeto">
+            <div class="sobre-container">
+
+                <div class="sobre-card-principal">
+                    <div class="sobre-topo">
+                        <div class="icone-principal">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <!-- topo do chapéu -->
+                                <path d="M2 10L12 5L22 10L12 15L2 10Z"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linejoin="round"/>
+
+                                <!-- base -->
+                                <path d="M6 12V16C6 17.5 9 19 12 19C15 19 18 17.5 18 16V12"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+
+                        <div class="sobre-titulo">
+                            <h2>Projeto Acadêmico</h2>
+                            <p>Sistemas de Informação</p>
+                        </div>
+                    </div>
+
+                    <div class="sobre-texto">
+                        <p>O <b>FuelSpotBR</b> é um sistema modelo desenvolvido como trabalho acadêmico do curso de Sistemas de Informação, com o objetivo de apresentar uma solução para comparação de preços de combustíveis em postos de gasolina.</p>
+
+                        <p>Os dados exibidos são obtidos por meio de coletas realizadas pelos próprios desenvolvedores, permitindo simular um cenário real de análise e organização de informações.</p>
+
+                        <p>Este projeto aplica conceitos de desenvolvimento web, design de interfaces e experiência do usuário, demonstrando na prática como sistemas de informação podem ser utilizados para resolver problemas do cotidiano.</p>
+
+                    </div>
+                </div>
+
+                <div class="sobre-cards">
+                    <article class="card-info">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <!-- círculo externo -->
+                            <circle cx="12" cy="12" r="9"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+
+                            <!-- círculo do meio -->
+                            <circle cx="12" cy="12" r="5"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+
+                            <!-- círculo central -->
+                            <circle cx="12" cy="12" r="2"
+                                    fill="currentColor"/>
+                        </svg>
+                        <h3>Objetivo</h3>
+                        <p>Desenvolver uma plataforma que permita aos usuários pesquisar e comparar preços de combustíveis, facilitando a escolha do posto mais vantajoso.</p>
+                    </article>
+
+                    <article class="card-info">
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <!-- pessoa de trás -->
+                            <path d="M14 9.5C15.6569 9.5 17 8.15685 17 6.5C17 4.84315 15.6569 3.5 14 3.5" 
+                                stroke="currentColor" 
+                                stroke-width="2" 
+                                stroke-linecap="round"/>
+
+                            <!-- pessoa principal -->
+                            <path d="M7.5 11C9.70914 11 11.5 9.20914 11.5 7C11.5 4.79086 9.70914 3 7.5 3C5.29086 3 3.5 4.79086 3.5 7C3.5 9.20914 5.29086 11 7.5 11Z" 
+                                stroke="currentColor" 
+                                stroke-width="2"/>
+
+                            <path d="M1.5 20C1.5 16.9624 3.96243 14.5 7 14.5H8C11.0376 14.5 13.5 16.9624 13.5 20" 
+                                stroke="currentColor" 
+                                stroke-width="2" 
+                                stroke-linecap="round"/>
+
+                            <!-- corpo da pessoa de trás -->
+                            <path d="M13.5 14.5C16 14.5 17.8 16.2 17.8 18.5" 
+                                stroke="currentColor" 
+                                stroke-width="2" 
+                                stroke-linecap="round"/>
+
+                        </svg>
+                        <h3>Público-Alvo</h3>
+                        <p>Motoristas e consumidores que desejam economizar no abastecimento por meio da comparação de preços entre diferentes postos.</p>
+                    </article>
+
+                    <article class="card-info">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 3L14.8 9L21 9.8L16.5 14.2L17.8 20.5L12 17.3L6.2 20.5L7.5 14.2L3 9.8L9.2 9L12 3Z"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Diferencial</h3>
+                        <p>Sistema de busca com filtros por nome, cidade, bairro e tipo de combustível, além do destaque automático do menor preço entre os resultados.</p>
+                    </article>
+                </div>
+
+                <div class="sobre-bloco funcionalidades">
+                    <h3>Funcionalidades Principais</h3>
+
+                    <div class="funcionalidades-grid">
+                        <div class="funcionalidade-item">
+                            <h4>Busca de Postos</h4>
+                            <p>Permite pesquisar postos pelo nome para localizar com mais facilidade o estabelecimento desejado.</p>
+                        </div>
+
+                        <div class="funcionalidade-item">
+                            <h4>Filtros de Pesquisa</h4>
+                            <p>O sistema permite refinar a busca por cidade, bairro e tipo de combustível, facilitando a localização dos resultados.</p>
+                        </div>
+
+                        <div class="funcionalidade-item">
+                            <h4>Comparação de Preços</h4>
+                            <p>Os postos encontrados são exibidos com os valores dos combustíveis para ajudar na comparação entre as opções disponíveis.</p>
+                        </div>
+
+                        <div class="funcionalidade-item">
+                            <h4>Destaque do Melhor Preço</h4>
+                            <p>Entre os resultados exibidos, o sistema identifica e destaca automaticamente o posto com o menor preço do combustível selecionado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sobre-bloco tecnologias">
+                    <h3>Tecnologias Utilizadas</h3>
+
+                    <div class="tecnologias-grid">
+                        <article class="tecnologia-card">
+                            <h4>HTML</h4>
+                            <p>Estrutura</p>
+                        </article>
+
+                        <article class="tecnologia-card">
+                            <h4>CSS</h4>
+                            <p>Estilização</p>
+                        </article>
+
+                        <article class="tecnologia-card">
+                            <h4>JavaScript</h4>
+                            <p>Interações</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="bloco-banco">
+                    <h3>Estrutura do Banco de Dados</h3>
+                    <p>A modelagem do banco de dados foi desenvolvida em MySQL, porém não integrada diretamente ao sistema devido a limitações de hospedagem, sendo apresentada por meio de documentação técnica.</p>
+                    <p>A documentação completa, incluindo modelo conceitual, lógico e físico, pode ser acessada no material abaixo:</p>
+                    <a href="./docs/modelagem_banco_dados.pdf" target="_blank" class="btn-pdf">
+                        Abrir documentação
+                    </a>
+
+                </div>
+
+                <div class="nota-academica">
+                    <p><b>Nota:</b> Este é um projeto acadêmico modelo desenvolvido para fins educacionais. Os dados apresentados são ilustrativos e servem para demonstração das funcionalidades do sistema.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!--Rodapé-->
+    <footer>
+        <section>
+            <div>
+            <h3>FuelSpotBR</h3>
+            <p>Plataforma acadêmica desenvolvida para demonstrar a busca e comparação de preços de combustíveis, auxiliando usuários na escolha da melhor opção de abastecimento.</p>
+            </div>
+
+            <div class="projeto-info">
+                <h4>Projeto Acadêmico</h4>
+                <p>Desenvolvido por estudantes do curso de Sistemas de Informação.</p>
+                <p>Instituição: Universidade Vila Velha</p>
+
+                <p class="copyright">&copy 2026 FuelSpotBR - Todos os direitos reservados.</p>
+            </div>
+
+            <div class="rodape-final">
+                <p>Desenvolvido como trabalho acadêmico do curso de Sistemas de Informação.</p>
+            </div>
+        </section>
+    </footer>
+
+    <div id="popup-erro" class="popup-erro">
+        <span id="popup-texto">Preencha alguma opção</span>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
